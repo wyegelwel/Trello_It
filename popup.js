@@ -4,7 +4,9 @@ function onAuthorize(){
   $("#loggedout").hide();
   $("#output").show();
   Trello.get("members/me/boards", function(boards){
-    console.log(boards);
+    $.each(boards, function (idx, board){
+      board.lists = [];
+    });
     setUpBoards(boards);
   });
 }
@@ -25,7 +27,7 @@ function init(){
 
 
   $("#tokenEntered").click(function(e){
-      token = $("#tokenField").val();
+      token = $.trim($("#tokenField").val());
       console.log(token);
       if (token && token.length > 0){ //change check so that it equals length expected
         Trello.setToken(token);
