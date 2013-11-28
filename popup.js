@@ -24,6 +24,14 @@ function allBoardsLoaded(boards){
   return loaded;
 }
 
+function addCard(listId, name){
+  Trello.post("lists/"+listId + "/cards",
+              {name: name, due:null},
+              function(){
+                console.log("WOO");
+              });
+}
+
 function setUpBoards(boards){
   boardContainer = $("<div>").appendTo($("#trelloDiv"));
   $("<div>").text("Add card to:").appendTo(boardContainer);
@@ -40,6 +48,8 @@ function setUpBoards(boards){
       listDiv = $("<div>")
                 .text(list.name)
                 .addClass("list")
+                .attr("name", list.id)
+                .click(function(e){addCard($(e.target).attr("name"), "test");})
                 .appendTo(boardDiv);
     });
   });
@@ -48,7 +58,7 @@ function setUpBoards(boards){
 function init(){
   $("#trelloDiv").hide();
   token = localStorage.getItem("Trello_token");
-  if (token){
+  if (token && token != "null"){
     Trello.setToken(token);
     onAuthorize();
   }

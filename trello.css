@@ -14,6 +14,7 @@
 }
 
 .list{
+	cursor: pointer;
 	background: #e3e3e3;
 	float:left;
 	padding:3px;
@@ -21,6 +22,10 @@
 	border-radius:3px;
 	-webkit-box-shadow:0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(0, 0, 0, 0.1);
 	box-shadow:0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+body{
+	background: #e3e3e3;
 }
 
 #trelloDiv{
