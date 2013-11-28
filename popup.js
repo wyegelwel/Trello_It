@@ -2,7 +2,7 @@
 var token = null;
 function onAuthorize(){
   $("#loggedout").hide();
-  $("#output").show();
+  $("#trelloDiv").show();
   Trello.get("members/me/boards", function(boards_){
     var boards = boards_;
     $.each(boards, function (idx, board){
@@ -25,18 +25,28 @@ function allBoardsLoaded(boards){
 }
 
 function setUpBoards(boards){
-  boardContainer = $("<div>").appendTo($("#output"));
+  boardContainer = $("<div>").appendTo($("#trelloDiv"));
+  $("<div>").text("Add card to:").appendTo(boardContainer);
   $.each(boards, function(idx, board){
-    boardDiv = $("<div>").appendTo(boardContainer);
-    $("<h5>").text(board.name).appendTo(boardDiv);
+    console.log(board);
+    boardDiv = $("<div>")
+                .addClass("board")
+                .appendTo(boardContainer);
+    $("<div>")
+      .text(board.name)
+      .addClass("boardName")
+      .appendTo(boardDiv);
     $.each(board.lists, function(idx, list){
-      listDiv = $("<div>").text(list.name).appendTo(boardDiv);
+      listDiv = $("<div>")
+                .text(list.name)
+                .addClass("list")
+                .appendTo(boardDiv);
     });
   });
 }
 
 function init(){
-  $("#output").hide();
+  $("#trelloDiv").hide();
   token = localStorage.getItem("Trello_token");
   if (token){
     Trello.setToken(token);

@@ -1,0 +1,29 @@
+.board {
+	background: #27709b;
+	min-height: 60px;
+	padding: 3px;
+	margin: 5px;
+	overflow-x: auto;
+	border-radius:3px;
+	-webkit-box-shadow:0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(0, 0, 0, 0.1);
+	box-shadow:0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.boardName{
+	color: #e3e3e3;
+}
+
+.list{
+	background: #e3e3e3;
+	float:left;
+	padding:3px;
+	margin:2px;
+	border-radius:3px;
+	-webkit-box-shadow:0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(0, 0, 0, 0.1);
+	box-shadow:0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+#trelloDiv{
+	overflow-y:auto;
+
+}
