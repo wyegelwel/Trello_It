@@ -5,20 +5,25 @@
 	margin: 5px;
 	overflow-x: auto;
 	border-radius:3px;
+	font-weight: bolder;
+	font-size: 14px;
 	-webkit-box-shadow:0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(0, 0, 0, 0.1);
 	box-shadow:0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(0, 0, 0, 0.1);
 }
 
 .boardName{
 	color: #e3e3e3;
+	margin-bottom:3px;
 }
 
 .list{
 	cursor: pointer;
 	background: #e3e3e3;
 	float:left;
-	padding:3px;
+	padding:5px;
 	margin:2px;
+	font-size: 12px;
+	font-weight: bold;
 	border-radius:3px;
 	-webkit-box-shadow:0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(0, 0, 0, 0.1);
 	box-shadow:0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(0, 0, 0, 0.1);
@@ -26,6 +31,7 @@
 
 body{
 	background: #e3e3e3;
+	font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
 
 #trelloDiv{
@@ -34,4 +40,42 @@ body{
 }
 #addContainer{
 	display:block;
+}
+
+.addLabel{
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.cardField{
+	border-radius:3px;
+	padding: 2px;
+}
+
+#addConfirm{
+	color: white;
+	background: linear-gradient(to bottom, #1f9323 0, #166919 100%);
+	font-weight: bold;
+	font-size: 14px;
+	padding: 10px 25px;
+	border: none;
+	cursor: pointer;
+	border-radius:3px;
+	-webkit-box-shadow:0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(0, 0, 0, 0.1);
+	box-shadow:0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+#addCancel{
+	background-color: #e3e3e3;
+	font-weight: bolder;
+	font-size: 25px;
+	padding: 10px 15px;
+	border: none;
+	cursor: pointer;
+	
+}
+
+#addCardLabel{
+	font-weight: bolder;
+	font-size: 16px;
 }

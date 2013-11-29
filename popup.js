@@ -64,15 +64,24 @@ function setupAdd(listId){
   addContainer.empty();
   addField = $("<input>")
             .attr("placeholder", "Card name")
-            .appendTo($("<div>").text("Card name: ").appendTo(addContainer));
+            .addClass("cardField")
+            .appendTo($("<div>")
+                        .addClass("addLabel")
+                        .text("Card name: ")
+                        .appendTo(addContainer));
   descField = $("<input>")
             .attr("placeholder", "Card description")
-            .appendTo($("<div>").text("Card description: ").appendTo(addContainer));
+            .addClass("cardField")
+            .appendTo($("<div>")
+                      .addClass("addLabel")
+                      .text("Card description: ")
+                      .appendTo(addContainer));
   siteComment = $("<input>")
                 .attr("id", "siteComment")
                 .attr("type", "checkbox")
                 .text("Include current URL as comment")
                 .appendTo($("<div>")
+                            .addClass("addLabel")
                             .text("Include current URL as comment: ")
                             .appendTo(addContainer));
   addBtn = $("<button>")
@@ -99,14 +108,17 @@ function setupAdd(listId){
             .attr("id", "addCancel")
             .addClass("addBtn")
             .click(showBoardScreen)
-            .text("Cancel")
+            .text("X")
             .appendTo(addContainer);
 }
 
 function setUpBoards(boards){
   boardContainer = $("#boardContainer");
   boardContainer.empty();
-  $("<div>").text("Add card to:").appendTo(boardContainer);
+  $("<div>")
+    .attr("id", "addCardLabel")
+    .text("Add card to:")
+    .appendTo(boardContainer);
   $.each(boards, function(idx, board){
     console.log(board);
     boardDiv = $("<div>")
