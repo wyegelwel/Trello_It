@@ -12,6 +12,7 @@
   "content_security_policy": "script-src 'self' https://api.trello.com https://ssl.google-analytics.com https://ajax.googleapis.com; object-src 'self'",
   "permissions": [
     "https://trello.com/",
-    "https://api.trello.com/"
+    "https://api.trello.com/",
+    "tabs"
   ]
 }
