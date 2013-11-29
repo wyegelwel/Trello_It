@@ -67,7 +67,8 @@ body{
 
 #addCancel{
 	background-color: #e3e3e3;
-	color: rgb(85, 80, 80);
+	color: #686868;
+	text-align: center;
 	font-weight: bolder;
 	font-size: 25px;
 	padding: 10px 25px;
@@ -79,4 +80,8 @@ body{
 #addCardLabel{
 	font-weight: bolder;
 	font-size: 16px;
+}
+
+.connectDiv{
+	margin: 10px;
 }

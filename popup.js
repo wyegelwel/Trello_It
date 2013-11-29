@@ -8,6 +8,7 @@ function onAuthorize(){
   // if (boards && boards != "null"){
   //   setUpBoards(boards);
   // }
+  console.log("Test Test")
   $("<div>").text("Loading boards...").appendTo($("#boardContainer"));
   Trello.get("members/me/boards", function(boards_){
     var boards = boards_;
@@ -59,6 +60,7 @@ function showBoardScreen(){
 }
 
 function setupAdd(listId){
+
   addContainer = $("#addContainer").show();
   boardContainer = $("#boardContainer").hide();
   addContainer.empty();
@@ -113,6 +115,7 @@ function setupAdd(listId){
 }
 
 function setUpBoards(boards){
+  console.log("set up")
   boardContainer = $("#boardContainer");
   boardContainer.empty();
   $("<div>")

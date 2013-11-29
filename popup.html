@@ -30,17 +30,19 @@
   </head>
   <body>
     <div id="loggedout">
-      <a id="connectLink" href="#">Connect To Trello</a>
-      <input id="tokenField" placeholder="Trello Token"></input>
-      <button id="tokenEntered">Token Entered</button>
+      <div class="connectDiv"> 
+        To use this extension:
+        <li>click the 'Connect to Trello' button</li>
+        <li> Then copy/paste the token into the textbox below and click the 'Token Entered' button </li>
+      </div>
+      <div class="connectDiv"><a id="connectLink" href="#">Connect To Trello</a></div>
+      <div class="connectDiv"><input id="tokenField" placeholder="Trello Token"></input>
+      <button id="tokenEntered">Token Entered</button></div>
 
     </div>
     <div id="trelloDiv">
       <div id="boardContainer"></div>
       <div id="addContainer">
-        <span>Card name: <input placeholder="Card name"/> </span>
-        <button class="addBtn" id="addConfirm">Add</button>
-        <button class="addBtn" id="addCancel">Cancel</button>
       </div>
     </div>
   </body>
