@@ -67,12 +67,13 @@ body{
 
 #addCancel{
 	background-color: #e3e3e3;
+	color: rgb(85, 80, 80);
 	font-weight: bolder;
 	font-size: 25px;
-	padding: 10px 15px;
+	padding: 10px 25px;
 	border: none;
 	cursor: pointer;
-	
+
 }
 
 #addCardLabel{

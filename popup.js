@@ -8,7 +8,7 @@ function onAuthorize(){
   // if (boards && boards != "null"){
   //   setUpBoards(boards);
   // }
-
+  $("<div>").text("Loading boards...").appendTo($("#boardContainer"));
   Trello.get("members/me/boards", function(boards_){
     var boards = boards_;
     $.each(boards, function (idx, board){
