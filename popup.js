@@ -11,7 +11,7 @@ function onAuthorize(){
   console.log("Test Test")
   $("<div>").text("Loading boards...").appendTo($("#boardContainer"));
   Trello.get("members/me/boards", function(boards_){
-    var boards = boards_;
+    var boards = $.grep(boards_, function(board, i){ return !board.closed });
     $.each(boards, function (idx, board){
       Trello.get("boards/"+board.id+"/lists", function(lists){
         board.lists = lists;
