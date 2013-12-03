@@ -127,10 +127,12 @@ function setUpBoards(boards){
     boardDiv = $("<div>")
                 .addClass("board")
                 .appendTo(boardContainer);
-    $("<div>")
+    $("<a>")
       .text(board.name)
+      .attr("href", board.url)
+      .attr("target", "_blank")
       .addClass("boardName")
-      .appendTo(boardDiv);
+      .appendTo($("<div>").appendTo(boardDiv).addClass("boardName"));
     $.each(board.lists, function(idx, list){
       listDiv = $("<div>")
                 .text(list.name)
