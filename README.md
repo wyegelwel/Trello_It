@@ -12,7 +12,7 @@ You can add cards without the comment as well of course.
 Get the extension
 ========
 
-Soon the extension will be added to the Google Store, and you can download it there.
+You can find the extension on the app store, https://chrome.google.com/webstore/detail/trello-it/gcojdlkfcjmklneaoniagdciohpoblch?hl=en-US
 
 If you want to use the extension before then, follow these instructions:
 
