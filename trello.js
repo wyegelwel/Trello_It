@@ -20,7 +20,7 @@ var Trello = function(){
 		  });
 		},
 
-		post: function (path,data,success){
+		post: function (path,data,success, error){
 			data.key = TRELLO_KEY;
 			data.token = token;
 			$.ajax({
@@ -28,7 +28,7 @@ var Trello = function(){
 				url: TRELLO_ENTRY_POINT + path,
 				data: data,
 		     	success: success,
-		     	error: function(e){console.log(e)}
+		     	error: error
 			});
 			console.log("I tried man")
 		}

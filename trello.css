@@ -85,3 +85,20 @@ body{
 .connectDiv{
 	margin: 10px;
 }
+
+.notification{
+	color: white;
+	font-weight: bold;
+	font-size: 14px;
+	text-align: center;
+	line-height: 60px;
+	vertical-align: middle;
+}
+
+.success{
+	background: #1f9323;
+}
+
+.fail{
+	background-color: rgb(212, 51, 44);;
+}

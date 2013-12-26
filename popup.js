@@ -3,12 +3,6 @@ var token = null;
 function onAuthorize(){
   $("#loggedout").hide();
   $("#trelloDiv").show();
-
-  // var boards = localStorage.getItem("Trello_boards");
-  // if (boards && boards != "null"){
-  //   setUpBoards(boards);
-  // }
-  console.log("Test Test")
   $("<div>").text("Loading boards...").appendTo($("#boardContainer"));
   Trello.get("members/me/boards", function(boards_){
     var boards = $.grep(boards_, function(board, i){ return !board.closed });
@@ -32,6 +26,32 @@ function allBoardsLoaded(boards){
   return loaded;
 }
 
+function showSuccess(msg){
+  $("<div>").addClass("board success notification").fadeIn(1000)
+            .delay(1000).fadeOut(2000).text(msg)
+            .appendTo($("#notificationContainer"));
+}
+
+function showError(msg){
+  $("<div>").addClass("board fail notification").fadeIn(1000)
+            .delay(1000).fadeOut(2000).text(msg)
+            .appendTo($("#notificationContainer"));
+}
+
+function addComment(cardId, card){
+  if (card.comment){
+      Trello.post("cards/" + cardId + "/actions/comments", 
+      {text: card.comment},
+      function(c){ //on success
+        console.log(c);
+        showSuccess("Card " + card.name + " added");
+      },
+      function(error){ //on fail
+        showError("Unable to add comment to card " + card.name);
+      });
+    } 
+}
+
 function addCard(listId, card){
   Trello.post("lists/"+listId + "/cards",
               {name: card.name, 
@@ -40,15 +60,13 @@ function addCard(listId, card){
              },
               function(c){
                 if (card.comment){
-                  Trello.post("cards/"+c.id + "/actions/comments",
-                  {text: card.comment},
-                  function(c){
-                    console.log(c);
-                  
-                  //TODO: Add success notification
-                  
-                  });
-                }   
+                  addComment(c.id, card);
+                } else{
+                  showSuccess("Card " + card.name + " added");
+                }  
+              },
+              function(error){
+                showError("Unable to add card " + card.name);
               });
 }
 
