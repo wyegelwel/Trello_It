@@ -6,7 +6,7 @@
   "version": "0.1",
 
   "browser_action": {
-    "default_icon": "images/trello_it_logo.png",
+    "default_icon": "images/Trello_it_logo.png",
     "default_popup": "popup.html"
   },
   "content_security_policy": "script-src 'self' https://api.trello.com https://ssl.google-analytics.com https://ajax.googleapis.com; object-src 'self'",
