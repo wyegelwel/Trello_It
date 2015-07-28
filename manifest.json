@@ -3,7 +3,7 @@
 
   "name": "Trello It",
   "description": "This extension lets you add new cards to boards/lists and attach the current page as a comment",
-  "version": "0.1",
+  "version": "0.3",
 
   "browser_action": {
     "default_icon": "images/Trello_it_logo.png",
