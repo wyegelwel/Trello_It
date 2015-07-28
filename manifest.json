@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
 
-  "name": "Add It for Trello",
+  "name": "Add it for Trello",
   "description": "This extension lets you add new cards to boards/lists and attach the current page as a comment",
   "version": "0.3",
 
